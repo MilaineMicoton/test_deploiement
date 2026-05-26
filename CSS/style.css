@@ -13,13 +13,13 @@ main , body {
 @font-face {
     font-family: "ardoise";
     src:
-        url("/font-family-ardoise/fonts/fonnts.com-Ardoise_Std.otf") format("opentype");
+        url("/FONTS/fonnts.com-Ardoise_Std.otf") format("opentype");
 }
 
 @font-face {
     font-family: "myriad-pro";
     src:
-        url("/font-family-myriad-pro/MYRIADPRO-REGULAR.OTF") format("opentype");
+        url("/FONTS/MYRIADPRO-REGULAR.OTF") format("opentype");
 }
 
 /* General styles  and typographie pour les écrans tablettes et pc */
