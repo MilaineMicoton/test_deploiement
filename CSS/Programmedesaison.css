@@ -1,0 +1,819 @@
+/*
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main , body  {
+    background-color:#f0ece2;
+}
+
+@font-face {
+    font-family: "ardoise";
+    src:
+        url("/font-family-ardoise/fonts/fonnts.com-Ardoise_Std.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "myriad-pro";
+    src:
+        url("/font-family-myriad-pro/MYRIADPRO-REGULAR.OTF") format("opentype");
+}
+
+/* General styles  and typographie */
+
+h1 {
+    text-align: left;
+}
+h1, h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+a, h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+h4 {
+    font-family: ardoise, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    color: red;
+    
+}
+
+p {
+    font-family: myriad-pro, sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+article > p {
+    hyphens: none;
+    text-align: justify;
+}
+
+
+/*-------------------le header------------------- */
+
+header {
+    padding: 0;
+    margin: 0px;
+    max-width: 100vw;
+/* pos relative permet de définir la place des éléments enfants absolute du header */
+    position:relative;
+    align-items: center;
+    box-sizing: border-box;
+/* sticky ne fonctionne pas avec le toggle*/
+    top: 0;
+    }
+   
+.logo-soleil-musee-court {
+    width: 100%;
+    height: 100%;
+} 
+.logo-soleil-musee-long {
+    width:100%;
+    height:100%;
+}
+
+.bandeau-horaires-musee-court {
+    width: 100%;
+    height: 100%;
+} 
+.bandeau-horaires-musee-long {
+    width:100%;
+    height:100%;
+}
+
+/* ---------- l'icone du menu burger -------*/
+
+#burger-icone {
+    width:40px;
+    height:40px;
+    position: absolute;
+    top:20px;
+    right:20px;
+    line-height: 30px;
+    text-align: center;
+    font-family: ardoise, sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+    border-style:none;
+    background-color:#f7dd9c;
+}
+
+
+/* ---------------------boite cachée (ou pas) du menu----------------- */
+
+/* alignement du menu à droite */
+header > nav {
+  display: flex;
+  justify-content: end;
+}
+/* créer la boîte du menu */
+li {
+  background-color: #004160;
+  list-style: none;
+}
+/* style du texte des liens */
+header a{
+    background-color: #004160;
+    color: white;
+    text-decoration: none;
+}
+
+/* style de la boite (cachée ou pas) contenant les liens */
+#pop-up-menu {
+  background-color: #004160;;
+  border: solid;
+  border-color: #004160;
+  padding: 10px;
+  position:absolute;
+  top:5px;
+  right:5px;
+  
+}
+/* popover */
+:popover-open {
+        width:260px;
+        height:190px;
+        position: absolute;
+        inset: unset;
+        margin: 0;
+        border: solid;
+        padding: 10px;
+        top:0px;
+        right:0px;
+      }
+
+
+
+/* -------------------main------------------ */
+
+main {
+    margin-top: 0;
+    padding: 0;
+    max-width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.article-header-cadre {
+    border: 2px solid #004160;
+    border-radius: 10px;
+    padding:10px;
+    width:100%;
+}
+.article-header-cadre > p {
+    text-align: justify;
+}
+
+.bouton-candidature {
+    width:300px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:#004160;
+    text-align: center;
+    padding:10px 5px 0px 5px;
+    margin: auto;
+}
+.bouton-candidature > a {
+
+    text-decoration: none;
+    background-color:#004160;
+    color:white;
+}
+.bandeau-intercalaire {
+    max-width: 100 vw;
+    background-color: #004160;
+    color: white;
+    font-family: ardoise;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5rem 0 1rem 0;
+}
+
+/* flex conteneur des vignettes artiste-image-et-texte-vertical, et artiste-image-et-texte-horizontal */
+
+
+.artiste-image-et-texte-vertical > * {
+    width: 300px;
+    padding:10px;
+}
+.container-vignettes-artistes {
+    display: flex;
+    max-width: 100vw;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.artiste-image-et-texte-vertical {
+    border: 2px solid #004160;
+    border-radius: 10px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    margin-top:32px;
+}
+.artiste-image-et-texte-horizontal> * {
+    width: 300px;
+    padding: 10px;
+}
+.artiste-image-et-texte-horizontal {
+    display:flex;
+    flex-wrap:nowrap;
+    max-width:100%;
+    justify-content: space-between;
+    border: 2px solid #004160;
+    border-radius: 10px;
+    margin: 32px;
+}
+
+/* ---------la bande des logos à aligner-------*/
+.bande-logos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap:nowrap;
+  max-width:100%;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.logo > img {
+    width:110px;
+    height:auto;
+    padding:0 10px 0 10px;
+}
+.logo-latronquiere > img {
+    width:90px;
+    height:auto;
+}
+.logo-fdva > img{
+    width:170px;
+    height:auto;
+    padding-left:0;
+}
+.logo-ca > img {
+    width: 150px;
+    height:auto;
+}
+.logo-mh > img {
+    padding-right:0;
+}
+
+/*--------------- footer ------------------*/
+
+/* largeur et hauteur */
+
+.monFooter {
+    padding: 30px 10px 30px 10px;
+    max-width: 100vw;
+    height: 10vh;
+    align-items: center;
+    background-color: #ffcf53;
+}
+
+/* rendre le conteneur flex */
+
+.menu-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffcf53;
+}
+
+/* finition */
+
+.menu-footer a {
+    display: inline;
+    background-color: #ffcf53;
+    font-size: large;
+    border-color: #ffcf53;
+    color:#560404;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+/* ------------------------les media queries-------------------------- */
+/*-------------------------------------------------------------------- */
+
+@media screen and (width <=600px){
+    
+    .bouton-candidature {
+        width:250px;
+        margin:auto;
+        padding:3px 5px 7px 5px;
+        
+    }
+    
+}
+
+@media screen and (width >=800px) {
+body {
+    margin: 0 40px 0 40px;
+}
+}
+
+@media screen and (width >=1200px) {
+body {
+    margin: 0 70px 0 70px;
+}
+}
+
+@media screen and (width >=1300px) {
+body {
+    margin: 0 130px 0 130px;
+}
+}
+@media screen and (width >=1450px) {
+body {
+    margin: 0 150px 0 150px;
+}
+}
+
+@media screen and (width >=1586px) {
+body {
+    margin: 0 200px 0 200px;
+}
+}
+@media screen and (width >=2000px) {
+body {
+    margin: 0 400px 0 400px;
+}
+}
+
+/* ---------------taille des polices pour les tablettes et les pc portables --------*/
+
+@media screen and (width <=1024px) {
+    h1{
+    font-size:  1.6em;
+    margin-left: 5%;
+    text-align: left;
+    margin:0;
+    
+}
+}
+
+/* ---------------taille des polices pour les tel portables -------- */
+
+@media screen and (width <= 520px){
+    .menu-footer > a {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (width <= 426px){
+    
+    h1 {
+        text-align: center;
+        text-wrap: nowrap;
+        margin:0;
+        font-family: ardoise, sans-serif;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    
+    h2 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    }
+    a, h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    }
+
+    p {
+    font-family: myriad-pro;
+    font-size: 1em;
+    text-align: center;
+    }   
+
+    .menu-footer > a {
+        font-size: 0.6em;
+    }
+}
+
+/* choisir l'image du header selon la largeur de l'écran */
+
+@media (max-width: 768px){
+    .logo-soleil-musee-long {
+        display:none;
+    }
+}
+@media (min-width: 769px){
+    .logo-soleil-musee-court {
+        display:none;
+    }
+}
+
+/* choisir l'image du bandeau des horaires selon la largeur de l'écran */
+
+@media (max-width: 630px){
+    .bandeau-horaires-musee-long {
+        display:none;
+    }
+}
+@media (min-width: 631px){
+    .bandeau-horaires-musee-court {
+        display:none;
+    }
+}
+/* puis ajuster le dessin musée et le bandeau horaires selon les tailles d'écrans*/
+
+.bandeau-bleu-et-dessin-musee {
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+}
+/* --------------------- minimum 631px-------------------- */
+
+@media (min-width:631px) {
+.bandeaux-horaires {
+    width: 76%;
+
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top:50%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height: auto;
+}
+}  
+
+/*------------------ minimum 769px--------------------------*/
+
+@media (min-width:769px) {
+.bandeaux-horaires {
+    width: 76%;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top:43%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height: auto;
+}
+}  
+
+/* -----------------minimum 1024px--------------------------*/
+
+@media (min-width:1024px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height:auto;
+}
+}
+
+/* -----------------minimum 1224px--------------------------*/
+
+@media (min-width:1224px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/*--------------- minimum 1400px ----------------*/
+
+@media (min-width:1400px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/* ----------------------------minimum 1700px-------------*/
+
+@media (min-width:1700px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/*-------------minimum 2000px -------------------------*/
+
+@media (min-width:2000px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/* pour les petits écrans, pas de dessin du musée séparé, il est déjà sur la photo (courte) du bandeau */
+
+@media (max-width:630px) {
+    .dessin-musee {
+    display: none;
+}
+    .dessin-musee > img {
+    display:none;
+    }
+}
+
+/* taille des logos selon l'écran */
+
+@media (max-width:760px){
+    .logo > img {
+    width: 60px;
+    height:auto;
+}
+    .logo-latronquiere > img {
+    width:50px;
+    height:auto;
+}
+    .logo-fdva > img{
+    width:180px;
+    height:auto;
+}
+    .logo-ca > img{
+    width:180px;
+    height:auto;
+}
+}
+
+@media (max-width:630px){
+    .logo > img {
+    width: 50px;
+    height:auto;
+    padding:5px;
+}
+    .logo-latronquiere > img {
+    width:50px;
+    height:auto;
+}
+    .logo-fdva > img{
+    width:100px;
+    height:auto;
+}
+    .logo-ca > img{
+    width:80px;
+    height:auto;
+}
+}
+
+/* ----------manipulation des vignettes artistes selon les tailles d'écran ------------------*/
+
+/* par défaut, les vignettes sont toutes affichées, sauf utilisation de display:none
+
+/*************************************************************************************************/
+/* pour les petits formats (tél portables) TOUTES les vignettes HORIZONTALES sont SUPPRIMEES *****/
+/* et les vignettes verticales s'alignent naturellement une par largeur***************************/
+/* pas d'autre code nécéssaire.*******************************************************************/
+/*************************************************************************************************/
+
+@media (max-width:605px) {
+/*  on supprime d'abord le logo du musée à l'intérieur de la vignette horizontale par prudence */
+    .logo-musee-container-5artistes {
+        display:none;
+    }
+    .no-display-horizontal-3artistes {
+        display:none;
+    }
+    .no-display-horizontal-4artistes {
+        display:none;
+    }
+    /*nouveau code*/
+    .no-display-horizontal-5artistes {
+        display:none;
+    }
+}
+/****************************************************************************/
+/********* ci-dessous code uniquement axé sur !!! 5 !!! artistes ************/
+/****************************************************************************/
+/****************************************************************************/
+/***************** la dernière artiste a 2 vignettes possibles **************/
+/*********************** une horizontale et une verticale *******************/
+/****** et il faut supprimer l'une des deux selon la taille de l'écran*******/
+/****************************************************************************/
+
+/* de 606px à 994 */
+@media (min-width:606px) and (max-width:994px) {
+/* le logo du musée élargit la vignette horizontale, donc on supprime le logo*/
+    .logo-musee-container-5artistes {
+        display:none;
+    }
+/*code qui laisse la vignette horizontale s'afficher */
+    .no-display-vertical-5artistes{
+        display:none;
+    }
+}
+/*   
+/* de 995 à 1512px */
+@media (min-width:995px) and (max-width:1512px){
+/*code qui laisse la vignette verticale s'afficher */
+    .no-display-horizontal-5artistes {
+        display:none;
+    } 
+}
+/* de 1513 à 1588px */
+@media (min-width:1513px) and (max-width:1588px){
+    /*code qui laisse la vignette horizontale s'afficher */
+    .no-display-vertical-5artistes{
+        display:none;
+    }
+}
+/* de 1589 à 1614px */
+@media (min-width:1589px) and (max-width:1614px){
+    /*code qui laisse la vignette verticale s'afficher */
+    .no-display-horizontal-5artistes{
+        display:none;
+    }
+}
+/* de 1615 à 2325px */
+@media (min-width:1615px) and (max-width:2325px){
+    /*code qui laisse la vignette horizontale s'afficher */
+    .no-display-vertical-5artistes{
+        display:none;
+    }
+}
+/*
+/* à partir de 2326px et au dessus*/
+@media (min-width:2326px){
+     /*code qui laisse la vignette verticale s'afficher */
+    .no-display-horizontal-5artistes{
+        display:none;
+    }
+}
+/****************************************************************************/
+/********* ci-dessous code uniquement axé sur !!! 4 !!! artistes ************/
+/****************************************************************************/
+/****************************************************************************/
+/***************** la dernière artiste a 2 vignettes possibles **************/
+/*********************** une horizontale et une verticale *******************/
+/****** et il faut supprimer l'une des deux selon la taille de l'écran*******/
+/****************************************************************************/
+
+/* de 606px à 989 px */
+@media (min-width:606px) and (max-width:989px) {
+/*code qui laisse la vignette verticale s'afficher pour 4 artistes*/
+    .no-display-horizontal-4artistes {
+    display:none;
+    }
+}
+/* de 990 à 1654 px */
+@media  (min-width:990px) and (max-width:1654px)  {
+/*code qui laisse la vignette horizontale s'afficher pour 4 artistes*/
+    .no-display-vertical-4artistes {
+        display:none;
+    }
+}
+ 
+/* à partir de 1655px et au dessus*/
+@media (min-width:1655px) {
+/*code qui laisse la vignette verticale s'afficher pour 4 artistes*/
+    .no-display-horizontal-4artistes {
+        display:none;
+    }   
+}
+
+
+/****************************************************************************/
+/********* ci-dessous code uniquement axé sur !!! 3 !!! artistes ************/
+/****************************************************************************/
+/****************************************************************************/
+/***************** la dernière artiste a 2 vignettes possibles **************/
+/*********************** une horizontale et une verticale *******************/
+/****** et il faut supprimer l'une des deux selon la taille de l'écran*******/
+/****************************************************************************/
+
+
+@media (min-width:606px) and (max-width:1021px) {
+/*code qui laisse la vignette horizontale s'afficher pour 3 artistes*/   
+    .no-display-vertical-3artistes {
+    display:none;
+}
+}
+@media  (min-width:1021px) and (max-width:1329px)  {
+/*code qui laisse la vignette verticale s'afficher pour 3 artistes*/
+    .no-display-horizontal-3artistes {
+        display:none;
+    }
+}
+
+@media (min-width:1330px) {
+/*code qui laisse la vignette verticale s'afficher pour 3 artistes*/
+    .no-display-horizontal-3artistes {
+        display:none;
+    } 
+}
+
+/* lors des changements d'expositions, normalement il suffit de changer le fichier HTML, le code CSS est écrit de manière
+à prendre en compte 2, 3, ou 4 artistes à chaque exposition*/
+
+/* s'il y a TROIS ARTISTES, en FORMAT TABLETTE, 
+la 3eme vignette est horizontale et le texte est à droite */
+
+/* s'il y a QUATRE ARTISTES, en FORMAT TABLETTE
+les 4 vignettes sont verticales, 2 par 2
+
+/* Donc s'il y a TROIS ou QUATRE artistes en FORMAT TABLETTE,
+les versions redondantes sont supprimées 
+
+*/
+
+
+
+
+/* s'il y TROIS ARTISTES, en FORMAT PC PORTABLE, les 3 premiers sont alignés, 
+et le quatrième horizontal sur la ligne suivante,
+donc on supprime les versions redondantes */
+
+
+
+/* ------------------Fin du code, hourra! ------------------*/

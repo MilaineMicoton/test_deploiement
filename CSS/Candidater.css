@@ -1,0 +1,689 @@
+/*
+/* Reset */  
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main , body {
+    background-color:#f0ece2;
+}
+
+@font-face {
+    font-family: "ardoise";
+    src:
+        local ("/font-family-ardoise/fonts/fonnts.com-Ardoise_Std.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "myriad-pro";
+    src:
+        url("/font-family-myriad-pro/MYRIADPRO-REGULAR.OTF") format("opentype");
+}
+
+/* General styles  and typographie pour les écrans tablettes et pc */
+
+span {font-family: ardoise, sans-serif;
+    font-weight:normal;
+    font-size: 1.2em;
+}
+
+ul , li {
+    font-family: myriad-pro, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    
+}
+
+.liste-envoi {
+    padding:0 0 0 10px;
+    margin:0 0 0 32px;
+}
+
+h1 {
+    text-align: center;
+}
+h1, h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+a, h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+h4 {
+    font-family: ardoise, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    color: red;
+    
+}
+
+h6 , h7 , h8 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h7{
+    font-size:1.5em;
+}
+
+h8{
+    font-size:1.2em;
+}
+
+
+p {
+    font-family: myriad-pro, sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+article > p {
+    text-align: left;
+    hyphens: auto;
+}
+
+/*-------------------le header------------------- */
+
+header {
+    padding: 0 10px 0 10px;
+    margin: 0px;
+    max-width: 100vw;
+/* pos relative permet de définir la place des éléments enfants absolute du header */
+    position:relative;
+    align-items: center;
+    box-sizing: border-box;
+/* sticky ne fonctionne pas avec le toggle*/
+    top: 0;
+    }
+   
+.logo-soleil-musee-court {
+    width: 100%;
+    height: 100%;
+} 
+.logo-soleil-musee-long {
+    width:100%;
+    height:100%;
+}
+
+.bandeau-horaires-musee-court {
+    width: 100%;
+    height: 100%;
+} 
+.bandeau-horaires-musee-long {
+    width:100%;
+    height:100%;
+}
+
+/* ---------------------boite cachée (ou pas) du menu----------------- */
+
+/* alignement du menu à droite */
+header > nav {
+  display: flex;
+  justify-content: end;
+}
+/* créer la boîte du menu */
+.menu > li {
+  background-color: #004160;
+  list-style: none;
+}
+/* style du texte des liens */
+header  a {
+    background-color: #004160;
+    color: white;
+    text-decoration: none;
+}
+
+/* le style du burger */
+
+#burger-icone {
+    width:40px;
+    height:40px;
+    position: absolute;
+    top:20px;
+    right:20px;
+    line-height: 30px;
+    text-align: center;
+    font-family: ardoise, sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+    border-style:none;
+    background-color:#f7dd9c;
+}
+
+/* style de la boite (cachée ou pas) contenant les liens */
+#pop-up-menu {
+  background-color: #004160;;
+  border: solid;
+  border-color: #004160;
+  padding: 10px;
+  position:absolute;
+  top:5px;
+  right:5px;
+  
+}
+
+/* popover */
+:popover-open {
+        width:260px;
+        height:190px;
+        position: absolute;
+        inset: unset;
+        margin: 0;
+        border: solid;
+        padding: 10px;
+        top:0px;
+        right:0px;
+      }
+
+/* main */
+
+main {
+    margin-top: 0;
+    padding: 0;
+    max-width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+}
+/* réduire la taille des section */
+
+section {
+    padding: 0 5px 0 5px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    
+} 
+
+.bandeau-intercalaire {
+    max-width: 100 vw;
+    background-color: #004160;
+    color: white;
+    font-family: ardoise;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5rem 5px 0.5rem 5px;
+}
+
+
+/* ------------formatter la section candidature---------- */
+.flex-container {
+    display: flex;
+    width:80%;
+    
+    padding:20px;
+    margin:auto;
+
+}
+.info-candidature {
+    width:100%;
+   /* justify-content: center;*/
+    padding: 30px;
+    border:solid;
+    border-color: #004160;
+    border-radius: 30px;
+}
+
+.info-candidature  a {
+    font-size:1em;
+}
+
+.conditions {
+    display:flex;
+    justify-content: space-between;
+}
+.conditions-texte {
+    margin:20px 0 20px 0;
+}
+
+.bouton-telecharger {
+    width:200px;
+    height:60px;
+    border-radius: 10px;
+    background-color:#004160;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.bouton-telecharger > a {
+    text-decoration: none;
+    background-color:#004160;
+    color: white;
+}
+
+
+/* ---------la bande des logos à aligner-------*/
+.bande-logos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap:nowrap;
+  max-width:100%;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.logo > img {
+    width:110px;
+    height:auto;
+    padding:0 10px 0 10px;
+}
+.logo-latronquiere > img {
+    width:90px;
+    height:auto;
+}
+.logo-fdva > img{
+    width:170px;
+    height:auto;
+    padding-left:0;
+}
+.logo-ca > img {
+    width: 150px;
+    height:auto;
+}
+.logo-mh > img {
+    padding-right:0;
+}
+
+/*--------------- footer ------------------*/
+
+
+/* largeur et hauteur */
+
+.monFooter {
+    padding: 30px 10px 30px 10px;
+    max-width: 100vw;
+    height: 10vh;
+    align-items: center;
+    background-color: #ffcf53;
+}
+
+/* rendre le conteneur flex */
+
+.menu-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffcf53;
+}
+
+/* finition */
+
+.menu-footer a {
+    display: inline;
+    background-color: #ffcf53;
+    font-size: large;
+    border-color: #ffcf53;
+    color:#560404;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+/* ------------------------les media queries-------------------------- */
+/*-------------------------------------------------------------------- */
+
+@media screen and (width <=600px){
+    .flex-container{
+        width:100%;
+        padding:0;
+    }
+    .bouton-telecharger{
+        width:150px;
+        padding:0 10px 0 10px;
+    }
+    .conditions-texte {
+        margin:0 10px 0 0;
+    }
+}
+
+/* marges extérieures sur le body selon la taille de l'écran */
+@media screen and (width >=800px) {
+body {
+    margin: 0 40px 0 40px;
+}
+}
+
+@media screen and (width >=1200px) {
+body {
+    margin: 0 70px 0 70px;
+}
+}
+
+@media screen and (width >=1300px) {
+body {
+    margin: 0 130px 0 130px;
+}
+}
+
+@media screen and (width >=1450px) {
+body {
+    margin: 0 150px 0 150px;
+}
+}
+
+@media screen and (width >=1586px) {
+body {
+    margin: 0 200px 0 200px;
+}
+}
+@media screen and (width >=2000px) {
+body {
+    margin: 0 400px 0 400px;
+}
+}
+
+/* ---------------taille des polices pour les tablettes et les pc portables --------*/
+
+@media screen and (width <=1024px) {
+    h1{
+    font-size:  1.6em;
+    margin-left: 5%;
+    text-align: left;
+    }
+    
+}
+
+/* ---------------taille des polices pour les tel portables -------- */
+
+@media screen and (width <= 520px){
+    .menu-footer > a {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (width <= 426px){
+    
+    h1 {
+        text-align: center;
+        text-wrap: nowrap;
+        margin:0;
+        font-family: ardoise, sans-serif;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    
+    h2 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    }
+    h3 {
+    font-family: ardoise, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    }
+
+    p { 
+    font-family: myriad-pro;
+    font-size: 1em;
+    text-align: center;
+    } 
+
+    .menu-footer > a {
+        font-size: 0.6em;
+    }
+}
+
+/* choisir l'image du header selon la largeur de l'écran */
+
+@media (max-width: 768px){
+    .logo-soleil-musee-long {
+        display:none;
+    }
+}
+@media (min-width: 769px){
+    .logo-soleil-musee-court {
+        display:none;
+    }
+}
+
+/* choisir l'image du bandeau des horaires selon la largeur de l'écran */
+
+@media (max-width: 630px){
+    .bandeau-horaires-musee-long {
+        display:none;
+    }
+}
+@media (min-width: 631px){
+    .bandeau-horaires-musee-court {
+        display:none;
+    }
+}
+
+/* puis ajuster le dessin musée et le bandeau horaires selon les tailles d'écrans*/
+
+.bandeau-bleu-et-dessin-musee {
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+}
+/* --------------------- minimum 631px-------------------- */
+
+@media (min-width:631px) {
+.bandeaux-horaires {
+    width: 76%;
+
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top:50%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height: auto;
+}
+}
+
+/*------------------ minimum 769px--------------------------*/
+
+@media (min-width:769px) {
+.bandeaux-horaires {
+    width: 76%;
+
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top:43%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height: auto;
+}
+}  
+
+/* -----------------minimum 1024px--------------------------*/
+
+@media (min-width:1024px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+    height:auto;
+}
+}
+
+/* -----------------minimum 1224px--------------------------*/
+
+@media (min-width:1224px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/*--------------- minimum 1400px ----------------*/
+
+@media (min-width:1400px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/* ----------------------------minimum 1700px-------------*/
+@media (min-width:1700px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/*-------------minimum 2000px -------------------------*/
+
+@media (min-width:2000px) {
+.bandeaux-horaires {
+    width: 76%;
+    height:auto;
+}
+.bandeaux-horaires > img {
+    width:100%;
+    height:auto;
+}
+.dessin-musee {
+    width: 23%;
+    height:auto;
+    position:absolute;
+    top: 40%;
+    right:0;
+}
+.dessin-musee > img {
+    width:100%;
+}
+}
+
+/* pour les petits écrans, pas de dessin du musée séparé, il est déjà sur la photo (courte) du bandeau */
+
+@media (max-width:630px) {
+    .dessin-musee {
+    display: none;
+}
+    .dessin-musee > img {
+    display:none;
+    }
+}
+
+/* ------------------taille des logos selon l'écran------------ */
+
+@media (max-width:760px){
+    .logo > img {
+    width: 60px;
+    height:auto;
+}
+    .logo-latronquiere > img {
+    width:50px;
+    height:auto;
+}
+    .logo-fdva > img{
+    width:180px;
+    height:auto;
+}
+    .logo-ca > img{
+    width:180px;
+    height:auto;
+}
+}
+
+@media (max-width:630px){
+    .logo > img {
+    width: 50px;
+    height:auto;
+    padding:5px;
+}
+    .logo-latronquiere > img {
+    width:50px;
+    height:auto;
+}
+    .logo-fdva > img{
+    width:100px;
+    height:auto;
+}
+    .logo-ca > img{
+    width:80px;
+    height:auto;
+}
+}
